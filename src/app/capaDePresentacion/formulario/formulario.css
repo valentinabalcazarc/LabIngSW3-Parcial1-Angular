@@ -1,0 +1,107 @@
+#seccion3 {
+  max-width: 650px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.formUsuario h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  text-align: center;
+}
+
+.estilo-parrafo {
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.formUsuario label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.formUsuario input[type="text"],
+.formUsuario input[type="email"],
+.formUsuario input[type="date"],
+.formUsuario select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #f8fafc;
+}
+
+.formUsuario input:focus,
+.formUsuario select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background-color: #ffffff;
+}
+
+/* Grupo Opciones de Género */
+.radio-group {
+  border: 1px solid #e2e8f0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+.radio-group legend {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #334155;
+  padding: 0 6px;
+}
+
+.radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Mensajes de Error */
+.error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Botón de envío */
+#btnRegistrar {
+  width: 100%;
+  background-color: #059669;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+#btnRegistrar:hover {
+  background-color: #047857;
+}
+
+#btnRegistrar:active {
+  transform: scale(0.99);
+}

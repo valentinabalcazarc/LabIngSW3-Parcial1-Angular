@@ -1,0 +1,8 @@
+<div class="notificaciones-contenedor">
+  <div 
+    *ngFor="let toast of notificacionService.notificaciones()" 
+    class="notificacion" 
+    [ngClass]="'notificacion-' + toast.tipo">
+    {{ toast.mensaje }}
+  </div>
+</div>

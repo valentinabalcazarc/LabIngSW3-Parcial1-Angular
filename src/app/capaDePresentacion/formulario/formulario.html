@@ -1,0 +1,80 @@
+<div class="container mt-5" id="seccion3">
+  <form class="formUsuario" [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+    <h2>Formulario para el registro de usuario</h2>
+    <p class="estilo-parrafo">
+      Este formulario permite registrar un nuevo usuario a la clínica para poder acceder a los servicios ofrecidos.
+    </p>
+
+    <!-- Tipo de Identificación -->
+    <label for="identificacion">Tipo de Identificación:</label>
+    <select id="identificacion" formControlName="tipoIdentificacion">
+      <option value="" disabled selected>Seleccione un tipo de identificación</option>
+      <option value="cc">Cédula de Ciudadanía</option>
+      <option value="ti">Tarjeta de Identidad</option>
+      <option value="ce">Cédula de Extranjería</option>
+      <option value="pas">Pasaporte</option>
+    </select>
+    <div class="error" *ngIf="f['tipoIdentificacion'].touched && f['tipoIdentificacion'].errors?.['required']">
+      El tipo de identificación es obligatorio.
+    </div><br>
+
+    <!-- Número de Identificación -->
+    <label for="numero-identificacion">Número de Identificación:</label>
+    <input type="text" id="numero-identificacion" formControlName="numeroIdentificacion" placeholder="Número de identificación">
+    <div class="error" *ngIf="f['numeroIdentificacion'].touched && f['numeroIdentificacion'].errors?.['required']">
+      La identificación es obligatoria.
+    </div><br>
+
+    <!-- Nombres -->
+    <label for="nombres">Nombres:</label>
+    <input type="text" id="nombres" formControlName="nombres" placeholder="Nombres del usuario">
+    <div class="error" *ngIf="f['nombres'].touched">
+      <span *ngIf="f['nombres'].errors?.['required']">Los nombres son obligatorios.</span>
+      <span *ngIf="f['nombres'].errors?.['maxlength'] || f['nombres'].errors?.['minlength']">El nombre debe tener entre 1 y 20 caracteres.</span>
+    </div><br>
+
+    <!-- Apellidos -->
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" formControlName="apellidos" placeholder="Apellidos del usuario">
+    <div class="error" *ngIf="f['apellidos'].touched">
+      <span *ngIf="f['apellidos'].errors?.['required']">Los apellidos son obligatorios.</span>
+      <span *ngIf="f['apellidos'].errors?.['maxlength'] || f['apellidos'].errors?.['minlength']">El apellido debe tener entre 1 y 20 caracteres.</span>
+    </div><br>
+
+    <!-- Correo Electrónico -->
+    <label for="correo-electronico">Correo Electrónico:</label>
+    <input type="email" id="correo-electronico" formControlName="correoElectronico" placeholder="Correo electrónico">
+    <div class="error" *ngIf="f['correoElectronico'].touched && f['correoElectronico'].invalid">
+      <span *ngIf="f['correoElectronico'].errors?.['required']">El correo es obligatorio.</span>
+      <span *ngIf="f['correoElectronico'].errors?.['pattern']">Ingrese una dirección de correo electrónico válida (ej: usuario@gmail.com).</span>
+    </div><br>
+
+    <!-- Género -->
+    <fieldset class="radio-group">
+      <legend>Género:</legend>
+      <label>
+        <input type="radio" id="femenino" value="femenino" formControlName="genero"> Femenino
+      </label>
+      <label>
+        <input type="radio" id="masculino" value="masculino" formControlName="genero"> Masculino
+      </label>
+      <label>
+        <input type="radio" id="otro" value="otro" formControlName="genero"> Otro
+      </label>
+      <div class="error" *ngIf="f['genero'].touched && f['genero'].errors?.['required']">
+        El género es obligatorio.
+      </div><br>
+    </fieldset>
+
+    <!-- Fecha de Nacimiento -->
+    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha-nacimiento" formControlName="fechaNacimiento">
+    <div class="error" *ngIf="f['fechaNacimiento'].touched">
+      <span *ngIf="f['fechaNacimiento'].errors?.['required']">La fecha de nacimiento es obligatoria.</span>
+      <span *ngIf="f['fechaNacimiento'].errors?.['fechaFutura']">La fecha de nacimiento no puede ser mayor a la actual.</span>
+    </div><br>
+
+    <!-- Botón deshabilitado automáticamente cuando el formulario sea inválido -->
+    <button type="submit" id="btnRegistrar">Registrar</button>
+  </form>
+</div>
